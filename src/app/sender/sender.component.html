@@ -1,0 +1,26 @@
+<mat-card class="shipping-card">
+  <mat-card-header>
+    <mat-card-title>Message HL7</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Nom du serveur" [(ngModel)]="nomServeur">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Port" [(ngModel)]="port">
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Message"   [(ngModel)]="messageHl7ToSend" id="messageHL7"></textarea>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="sendMessage()">Envoyer</button>
+    </mat-card-actions>
+
+  </mat-card-content>
+</mat-card>  

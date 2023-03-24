@@ -1,0 +1,6 @@
+{
+    "simulator" : {
+        "target" : "http://localohost:8082",
+        "secure" : false
+    }
+}

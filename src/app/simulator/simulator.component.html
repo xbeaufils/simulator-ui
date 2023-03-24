@@ -1,0 +1,6 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <app-hl7-message (msgToSender)="send($event)" ></app-hl7-message>
+  <app-sender [messageHl7ToSend]="hl7Message"></app-sender>
+  <app-dicom></app-dicom>
+</div>

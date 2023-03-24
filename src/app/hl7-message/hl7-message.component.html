@@ -1,0 +1,97 @@
+<!--form [formGroup]="interventionForm" novalidate (ngSubmit)="onSubmit()" -->
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Message HL7</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-radio-group aria-label="Select an option" [(ngModel)]="intervention.ordre">
+            <mat-radio-button value="CREATE">Création</mat-radio-button>
+            <mat-radio-button value="UPDATE">Edition</mat-radio-button>
+            <mat-radio-button value="DELETE">Suppression</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="PatientId" [(ngModel)]="intervention.patientId" >
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Date de naissance" 
+              [matDatepicker]="picker"  
+              [(ngModel)]="dateNaissance">
+            <mat-hint>dd/MM/yyyy</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-radio-group aria-label="Sexe" [(ngModel)]="intervention.sex">
+            <mat-radio-button value="M" >Male</mat-radio-button>
+            <mat-radio-button value="F">Femelle</mat-radio-button>
+          </mat-radio-group>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Prenom" [(ngModel)]="intervention.prenom">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nom" [(ngModel)]="intervention.nom">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Operation id" [(ngModel)]="intervention.opeId" >
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Date Operation" [matDatepicker]="pickerOpe"  [(ngModel)]="dateOpe">
+            <mat-hint>dd/MM/yyyy</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="pickerOpe"></mat-datepicker-toggle>
+            <mat-datepicker #pickerOpe></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Heure Operation" type="time" [(ngModel)]="intervention.heureOpe" >
+          </mat-form-field>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Lieu" [(ngModel)]="intervention.lieu"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Description" [(ngModel)]="intervention.description"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Docteur" [(ngModel)]="intervention.doctor">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="buildMessage()">Build</button>
+    </mat-card-actions>
+  </mat-card>
+<!-- /form -->
